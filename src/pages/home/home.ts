@@ -21,8 +21,9 @@ this.geolocation.getCurrentPosition().then((resp) => {
 
 let watch = this.geolocation.watchPosition();
 watch.subscribe((data) => {
-	alert("speed:"+ data.coords.speed+
-		" and  meters "+this.measure(data.coords.latitude,data.coords.longitude,23.188996,72.628445))
+	if(this.measure(data.coords.latitude,data.coords.longitude,23.188996,72.628445)<=200){
+    alert("Welcome to the DA-IICT Resource Centre");
+  }
 
  // data can be a set of coordinates, or an error (if an error occurred).
  // data.coords.latitude
